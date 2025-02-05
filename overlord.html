@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlord - Anime</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #EAEAEA;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333333;
+            color: #F4C430;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid #F4C430;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Section Styles */
+        section {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #1A1A1A;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #F4C430;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Episode Button Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        li {
+            padding: 18px;
+            background-color: #333;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 230px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        li:hover {
+            background-color: #F4C430;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        li:active {
+            background-color: #D4A00C;
+        }
+
+        /* Video Player Styles */
+        .video-player {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        video {
+            max-width: 90%;
+            border-radius: 10px;
+            background-color: #222;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333333;
+            color: #F4C430;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 4px solid #F4C430;
+        }
+
+        /* Button Styles (General) */
+        button, input[type="submit"] {
+            background-color: #F4C430;
+            color: #333;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #D4A00C;
+        }
+
+        /* File List Styles */
+        #file-management {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #1A1A1A;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        #fileList {
+            list-style: none;
+            padding: 0;
+        }
+
+        #fileList li {
+            background-color: #333;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Icon and File Name Styles */
+        #fileList li .file-icon {
+            margin-right: 10px;
+            color: #F4C430;
+        }
+
+        #fileList li .file-name {
+            flex-grow: 1;
+            color: #EAEAEA;
+        }
+
+        /* Delete Button Styles */
+        #fileList li button {
+            background-color: #D9534F;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        #fileList li button:hover {
+            background-color: #C9302C;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Overlord</h1>
+    </header>
+
+    <section class="anime-description">
+        <h2>Résumé</h2>
+        <p>
+            L'histoire suit Momonga, un joueur passionné du MMORPG Yggdrasil. Lorsque les serveurs du jeu sont sur le point de fermer, il décide de rester connecté jusqu'à la fin. Mais à sa grande surprise, le monde du jeu continue d'exister et il se retrouve piégé sous l'apparence de son avatar, un puissant seigneur mort-vivant nommé Ainz Ooal Gown. Avec ses immenses pouvoirs et l'aide de ses fidèles serviteurs, il entreprend de découvrir la vérité sur ce nouveau monde et d'étendre son règne en tant qu'Overlord.
+        </p>
+    </section>
+
+    <section class="episodes">
+        <h2>Saisons & Épisodes</h2>
+        <ul>
+            <li onclick="playVideo('episode1.mp4')">Épisode 1</li>
+            <li onclick="playVideo('episode2.mp4')">Épisode 2</li>
+            <li onclick="playVideo('episode3.mp4')">Épisode 3</li>
+            <li onclick="playVideo('episode4.mp4')">Épisode 4</li>
+            <li onclick="playVideo('episode5.mp4')">Épisode 5</li>
+            <li onclick="playVideo('episode6.mp4')">Épisode 6</li>
+            <li onclick="playVideo('episode7.mp4')">Épisode 7</li>
+            <li onclick="playVideo('episode8.mp4')">Épisode 8</li>
+            <li onclick="playVideo('episode9.mp4')">Épisode 9</li>
+            <li onclick="playVideo('episode10.mp4')">Épisode 10</li>
+            <li onclick="playVideo('episode11.mp4')">Épisode 11</li>
+            <li onclick="playVideo('episode12.mp4')">Épisode 12</li>
+            <li onclick="playVideo('episode13.mp4')">Épisode 13</li>
+        </ul>
+    </section>
+
+    <section class="video-player">
+        <video id="videoPlayer" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+        </video>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Anime Platform - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        function playVideo(videoFile) {
+            const videoPlayer = document.getElementById("videoPlayer");
+            const videoSource = document.getElementById("videoSource");
+
+            // Met à jour la source de la vidéo en fonction de l'épisode cliqué
+            videoSource.src = `./Anime/Overlord/${videoFile}`;
+            videoPlayer.load();  // Recharge la vidéo
+            videoPlayer.play();  // Démarre la lecture
+        }
+    </script>
+</body>
+</html>
